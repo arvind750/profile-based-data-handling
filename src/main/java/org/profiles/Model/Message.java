@@ -9,6 +9,7 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int age;
 
     private String profileName;
     private String message;
@@ -24,5 +25,13 @@ public class Message {
 
     public String getMessage() { return message; }
 
-    public void setMessage(String message) { this.message = message; }
-}
+    public void setMessage(String message) { this.message = message;}
+
+    public int getAge(){
+        return age;
+        }
+        public void setAge(int age){
+        this.age = age;
+        }
+    }
+

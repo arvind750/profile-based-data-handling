@@ -29,6 +29,12 @@ public class MessageController {
 
 
     }
+    @PutMapping("/age")
+    public Message updateAge(@RequestBody Message updatedMessage){
+        Message existing = messageRepository.findById(updatedMessage.getId()).orElseThrow(() -> new RuntimeException("Not found"));
+        existing.setAge(updatedMessage.getAge());
+        return messageRepository.save(existing);
+    }
 
     // Post new message
     @PostMapping
